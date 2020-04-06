@@ -1,0 +1,8 @@
+tss.t5
+tss.t5.controller
+tss.t5.controller.impl
+tss.t5.models.dataBase
+tss.t5.models.entity
+tss.t5.models.entity.subEntity
+tss.t5.models.enums
+tss.t5.service

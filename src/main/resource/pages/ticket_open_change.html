@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ticket</title>
+    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src='https://cdn.tiny.cloud/1/hbentnzrttmp9qv5gi5guohgdzxeytc5o09yln4lzao5vxgf/tinymce/5/tinymce.min.js' referrerpolicy="origin"></script>
+    <link rel="stylesheet" href=" css/style.css">
+</head>
+
+<body style="display: none" id="hideAll">
+<nav class="navbar navbar-expand-lg navbar-light mr-0 pr-0 ml-0 pl-0">
+    <div class="container-fluid">
+        <ul class="list-unstyled list-inline nav-list text-center py-2">
+            <li class="list-inline-item float-left my_logo pb-5">
+                <a class="navbar-brand p-0 m-0 " href="index.html"><img src="img/logo.png"  height="60px" alt=""></a>
+            </li>
+            <li class="list-inline-item my_profile float-right pb-5">
+                <ul class=" fix_profile navbar-nav">
+                    <li class="nav-item">
+                        <div class="nav-item dropdown" style="display: none" id="user_block">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="img/profle.png " width="26px" alt="">
+                                <span id="name_for_user" class="text-white"></span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <!--                            <a class="dropdown-item" id="edit">Edit</a>-->
+                                <a class="dropdown-item" id="log_out">Log out</a>
+                            </div>
+                        </div>
+                        <div id="button_login" >
+                            <!--                        style="display: none"-->
+                            <a href="/login.html" class="btn btn-primary" >Login</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <span class="navbar-item"></span>
+                    </li>
+                </ul>
+            </li>
+            <li class="list-inline-item pb-5 container-fluid justify-content-center" style="max-width: 70%">
+                <!--                <div class="btn-search justify-content-center navbar-nav" >-->
+                <!--            <div class="col-12">-->
+                <ul class="list-unstyled list-inline nav-list text-center justify-content-center fix_mobile row">
+                    <form class="form-inline float-right  col-xl-4 col-lg-4 col-md-4 col-sm-12 row " action="" method="post"  id="button_all">
+                        <li class="list-inline-item col-xl-12 col-md-12-col-lg-12  col-sm-12 row">
+                            <div class="col-xl-4"></div>
+                            <button class="btn btn-success col-xl-12 col-md-12-col-lg-12  col-sm-12"  type="submit" >Show all</button>
+                        </li>
+                    </form>
+                    <form class="form-inline col-xl-8 col-lg-8 col-md-8 col-sm-12 float-right row" id="button_search">
+                        <li class="list-inline-item col-xl-7 col-lg-8 col-md-8 col-sm-12 row">
+                            <input class="form-control  col-xl-12 col-lg-10 col-md-12 col-sm-12 ml-sm-0 float-right" type="search" placeholder="Search" aria-label="Search" id="search_text">
+                        </li>
+                        <li class="list-inline-item col-xl-5 col-lg-4 col-md-4 col-sm-12 row">
+                            <button class="btn col-xl-12 btn-info float-left" type="submit">Search</button>
+                        </li>
+                    </form>
+                    <!--            </div>-->
+                    <li class="list-item col-xl-12 row mt-3">
+                        <span class="col-xl-12"  id="message_search"/>
+                    </li>
+                    <!--                </div>-->
+                </ul>
+            </li>
+
+        </ul>
+
+    </div>
+</nav>
+<main>
+<div class="container">
+    <form action="" method="post" id="add_save" class="ticket-aria">
+        <div class="form-group">
+            <label class="text-white" for="ticket_name">Title*</label>
+            <a href="history_ticket.html" style="display: none;" class="comment_for_login float-right" id="ticket_history">Show history</a>
+            <input class="form-control" id="ticket_name" readonly required>
+<!--            <span id=""> </span>-->
+        </div>
+        <div class="form-group">
+            <label class="text-white" for="ticket_summary">Summary*</label>
+            <textarea class="form-control " id="ticket_summary" rows="2" required></textarea>
+        </div>
+        <div class="form-group">
+            <label class="text-white" for="status">Status*</label>
+            <select class="form-control" id="status" readonly disabled required>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="text-white" for="severity">Severity*</label>
+            <select class="form-control" id="severity" readonly disabled required>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="text-white" for="priority">Priority*</label>
+            <select class="form-control" id="priority" readonly disabled required>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="text-white" for="author">Author*</label>
+            <input class="form-control" id="author" type="text" readonly>
+        </div>
+        <div class="form-group">
+            <label class="text-white" for="date_create">Created date*</label>
+            <input type="text" class="form-control" id="date_create" readonly>
+        </div>
+        <div class="form-group">
+            <label class="text-white" for="date_change">Modified date*</label>
+            <input type="text" class="form-control" id="date_change" readonly>
+        </div>
+        <div class="form-group">
+            <label class="text-white" for="fixer">Fixer*</label>
+            <ul id="fixer_block">
+                <!--                <li id="">-->
+                <!--                    <span value="sfsffs">wqffffffffwqfqw</span>-->
+                <!--                    <button type="button" class="fixer_span_remove">X</button>-->
+                <!--                </li>-->
+            </ul>
+            <select  class="form-control" id="fixer" readonly disabled>
+                <option disabled selected value="fixers">fixers</option>
+            </select>
+            <button type="button" id="fixer_add" disabled>Add</button>
+
+
+        </div>
+        <div class="form-group">
+            <label class="text-white" for="steps">Steps to reproduce</label>
+            <textarea class="form-control " id="steps"  onclick="textAreaAdjust(this)" style="overflow:hidden" readonly></textarea>
+        </div>
+        <div class="form-group">
+            <label class="text-white" for="expected_result">Expected result</label>
+            <textarea class="form-control " id="expected_result" onclick="textAreaAdjust(this)" style="overflow:hidden"  readonly></textarea>
+        </div>
+        <div class="form-group">
+            <label class="text-white" for="actual_result">Actual result</label>
+            <textarea class="form-control " id="actual_result" onclick="textAreaAdjust(this)" style="overflow:hidden"  readonly></textarea>
+        </div>
+        <button class='btn btn-primary' type="submit" id="save" style="display: none;">Save</button>
+        <span id="save_message" style="display: none"></span>
+    </form>
+
+
+    <h3 class="text-white">Comments:</h3>
+    <div class="media">
+        <div class="mr-3"></div>
+        <div class="media-body" id="comment">
+            <!--            <div class="media-body" id="comment">-->
+            <!--                <h5 class="mt-0" id ="comment_autor">A</h5>-->
+            <!--                <textarea class="form-control" id="comment_value" rows="2" readonly></textarea>-->
+            <!--            </div>-->
+        </div>
+
+    </div>
+    <br><br>
+
+    <form action="" method="post" style="display: none;" id="add_comment" novalidate>
+        <div class="form-group">
+            <label class="text-white" for="new_comment">Write your comment</label>
+            <br>
+            <textarea class="form-control" id="new_comment" rows="3" required></textarea>
+        </div>
+        <button class='btn btn-primary' type="submit">Add comment</button>
+    </form>
+    <br><br>
+</div>
+</main>
+<footer></footer>
+<script>
+    function textAreaAdjust(o) {
+        o.style.height = "1px";
+        o.style.height = (25+o.scrollHeight)+"px";
+    }
+</script>
+
+<script src="js/ticket_change.js"/>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+</html>

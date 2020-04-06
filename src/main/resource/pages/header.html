@@ -1,0 +1,117 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="ru">-->
+
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+<!--    <title>Document</title>-->
+
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">-->
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+<!--    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>-->
+<!--    <script>-->
+<!--         $(document).ready(function () {-->
+<!--             $.ajax({-->
+<!--                type: 'POST',-->
+<!--                url: '/session/status',-->
+<!--                dataType: 'json',-->
+<!--                complete: [-->
+<!--                    (response) => {-->
+<!--                      if(response.responseText == "true"){-->
+<!--                         $('#button_login').hide();-->
+<!--                         $('#user_block').show();-->
+
+<!--                         $.ajax({-->
+<!--                             type: 'POST',-->
+<!--                             url: `/user/user`,-->
+<!--                             dataType: 'json',-->
+<!--                              complete: [-->
+<!--                                 (response) => {-->
+<!--                                     console.log(response.responseText);-->
+<!--                                     if(response.responseText == "false"){-->
+<!--                                         console.log("sssssssssss false user");-->
+<!--                                     }else {-->
+<!--                                         const obj = $.parseJSON(response.responseText);-->
+<!--                                          $('#name_for_user').text(obj.userName);-->
+<!--                                         localStorage.setItem("current_user_id", obj.id);-->
+<!--                                         localStorage.setItem("current_user_name", obj.userName);-->
+<!--                                     }-->
+
+<!--                                 }-->
+<!--                             ]-->
+<!--                        });-->
+<!--                      } else{-->
+<!--                           $('#button_login').show();-->
+<!--                       }-->
+<!--                    }-->
+<!--                ]-->
+<!--            });-->
+<!--             $("#log_out").click(function() {-->
+<!--                 console.log("logOut");-->
+<!--                 $.ajax({-->
+<!--                     type: 'POST',-->
+<!--                     url: `/user/logout`,-->
+<!--                     dataType: 'json',-->
+<!--                     complete: [-->
+<!--                         (response) => {-->
+<!--                         window.localStorage.clear();-->
+<!--                         window.location.replace("index.html");-->
+<!--                        }-->
+<!--                    ]-->
+<!--                });-->
+<!--             });-->
+<!--         });-->
+<!--    </script>-->
+<!--    <link rel="stylesheet" href=" css/style.css">-->
+<!--</head>-->
+<!--<body>-->
+<!--<body style="display: none" id="hideAll">-->
+<nav class="justify-content-center navbar navbar-expand-lg navbar-light row mr-0 pr-0 ml-0 pl-0" >
+    <!--       style="background-color: #59f8bc;"-->
+    <div class="col-3 pl-3">
+        <a class="navbar-brand p-0 m-0 " href="index.html"><img src="img/logo.png"  height="60px" alt=""></a>
+    </div>
+
+    <div class="col-6 justify-content-center navbar-nav" >
+        <form class="form-inline " action="" method="post"  id="button_all">
+            <button class="btn btn-success " type="submit" >Show all</button>
+        </form>
+        <form class="form-inline" id="button_search">
+            <input class="form-control mr-sm-2 " type="search" placeholder="Search" aria-label="Search" id="search_text">
+            <button class="btn btn-info " type="submit">Search</button>
+        </form>
+        <span id="message_search"/>
+    </div>
+    <div class="col-3>
+        <div class="">
+            <ul class="float-right navbar-nav  ">
+                <li class="nav-item">
+                    <div class="nav-item dropdown" style="display: none" id="user_block">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="img/profle.png " width="26px" alt="">
+                            <span id="name_for_user" class="text-white"></span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <!--                            <a class="dropdown-item" id="edit">Edit</a>-->
+                            <a class="dropdown-item" id="log_out">Log out</a>
+                        </div>
+                    </div>
+                    <div id="button_login" >
+<!--                        style="display: none"-->
+                        <a href="/login.html" class="btn btn-primary" >Login</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <span class="navbar-item"></span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+<!--<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>-->
+<!--</body>-->
+
+<!--</html>-->

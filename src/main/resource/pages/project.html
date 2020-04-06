@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit project</title>
+    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href=" css/style.css">
+</head>
+
+<!--<body style="display: none" id="hideAll">-->
+<body style="display: none" id="hideAll">
+<nav class="navbar navbar-expand-lg navbar-light mr-0 pr-0 ml-0 pl-0">
+    <div class="container-fluid">
+        <ul class="list-unstyled list-inline nav-list text-center py-2">
+            <li class="list-inline-item float-left my_logo pb-5">
+                <a class="navbar-brand p-0 m-0 " href="index.html"><img src="img/logo.png"  height="60px" alt=""></a>
+            </li>
+
+
+        </ul>
+
+    </div>
+</nav>
+<main class="pb-4 pt-4 " >
+    <div class="container" >
+<!--        <form action="" method="post" id="change_project" class="ticket-aria">-->
+<!--            <div class="form-group">-->
+<!--                <label class="text-white">Edit Project</label>-->
+<!--                <select class="form-control" id="project_list" >-->
+<!--                    <option selected value></option>-->
+<!--                </select>-->
+<!--            </div>-->
+<!--        </form>-->
+        <form action="" method="post" id="add_save" class="ticket-aria">
+            <div class="form-group">
+                <label class="text-white" for="project_name">Title*</label>
+                <a href="/index.html"  class="comment_for_login float-right " >Back to main page</a>
+                <input class="form-control" id="project_name"  required>
+
+            </div>
+            <div class="form-group">
+                <label class="text-white" for="member">Members*</label>
+                <ul id="member_block">
+                </ul>
+                <select class="form-control" id="member" >
+                    <option disabled selected value></option>
+                </select>
+                <button type="button" id="member_add" >Add</button>
+            </div>
+            <div class="form-group custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="type_checkbox" checked>
+                <label class="custom-control-label text-white" for="type_checkbox">PRIVATE</label>
+            </div>
+            <button class='btn btn-primary' type="submit" id ="button_save">Create</button>
+            <span id="save_message" style="display: none" class="text-white"></span>
+        </form>
+
+    </div>
+</main>
+<footer></footer>
+<script src="js/project.js"/>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+</html>

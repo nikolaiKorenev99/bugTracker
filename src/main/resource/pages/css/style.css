@@ -1,0 +1,119 @@
+
+nav{
+    /*background: #466368;*/
+    background: linear-gradient(to top , #648880,#293f50);
+    /*border-bottom: #404b50 1px solid;*/
+    position: relative;
+}
+body{
+    /* background: linear-gradient(to top ,#142939,#293f50 );*/
+    min-height: 100vh;
+    /*background: linear-gradient(to top ,#293f50,#648880 );*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+main{
+    /*min-height: 100vh;*/
+    min-height: calc( 100vh - (230px));
+    background: linear-gradient(to top ,#293f50,#648880 );
+}
+.btn-search{
+
+}
+.profile a{
+    color: #fff;
+}
+.fix_mobile{
+    margin-left: 10px;
+}
+footer{
+    border-top: #293f50 1px solid;
+    /*background: #466368;*/
+    background: linear-gradient(to bottom , #293f50,#648880);
+}
+/*footer span{*/
+/*    color: #fff;*/
+/*}*/
+.project_change{
+    justify-content: center;
+}
+.project_change  .label_name{
+    width: 100px;
+}
+footer a:hover{
+    color: #a5a5a5;
+}
+.text-white{
+    color: #fff;
+}
+.text-grey{
+    color: #b2b2b2;
+}
+.fixer_name {
+    width: 150px;
+}
+#fixer_block span{
+    float: left;
+}
+.null_find{
+
+    width: 200px;
+    margin-top: 50px;
+    height: 40px;
+    position:absolute;
+    z-index:9999
+}
+.title-card-my{
+    min-height: 100px;
+}
+.body-card-my{
+    min-height: 100px;
+    max-height: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.fixer_span_remove{
+    border-radius: 10px;
+    float: right;
+}
+.nav-list{
+    width: 100%;
+}
+.my_logo{
+    margin-left: 50px;
+}
+.my_profile{
+    margin-right: 50px;
+    width: 160px;
+}
+.fix_profile{
+    margin-right: 50%;
+}
+.comment_for_login{
+    color: #000000;
+    text-decoration: underline;
+}
+.comment_for_login:hover{
+    color: #424242;
+}
+.text_width_fix{
+    word-wrap: break-word;
+    overflow-x:hidden;
+    max-width: 20%;
+}
+/*textarea {*/
+/*    display: block;*/
+/*    height: 100%;*/
+/*    overflow:hidden;*/
+/*}*/
+textarea{
+    height:70px;
+}
+/*position: fixed; !* Фиксированное положение *!*/
+/*left: 0; bottom: 0; !* Левый нижний угол *!*/
+/*color: #fff; !* Цвет текста *!*/
+/*width: 100%; !* Ширина слоя *!*/
+
+

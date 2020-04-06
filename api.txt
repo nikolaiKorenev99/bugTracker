@@ -1,0 +1,214 @@
+﻿/user/login   - логин
+username  не пустое
+password не пустое
+Ответ 
+true
+false
+
+/user/logout логаут
+Ответ 
+true
+false
+
+/user/user  - получить текущего юзера, авторизированного, то есть себя
+джесон с узером
+или false, если нет сессии
+
+/user/username - проверить что такого юзернейм нет в базе
+Ответ 
+username - username 
+true - нет юзера
+false - уже есть
+
+
+/user/email- проверить что такой почты нет в базе
+email - email
+Ответ 
+true - нет 
+false - уже есть
+
+/user/sentVerifyMail - послать код на почту  при регистрации 
+email - email
+Ответ 
+true - отправлено 
+false - что то не так или уже отправлено раньше
+
+/user/code - проверить код с письма 
+email
+code код с письма
+Ответ
+true - код правильный
+false - не верный код
+
+/user/create - создать пользователя
+username
+password
+email
+code - код с письма
+Ответ
+true - если все ок, юзер автологиниться
+false - чет не так
+
+
+/user/restore - восстановить пароль
+email - почта для восстановления (должна быть в систему уже)
+Ответ
+true - код отправлено
+false - чет не так
+
+
+/session/status  - проверка сессии
+Ответ 
+true есть сессия
+false нет сессии
+
+
+/mainPage/allTickets -  показать кратко и тикетах с проекта
+id - айди проекта, текущего, для которого показать тикеты
+Ответ
+json с краткой инфой о тикетах
+false - если нет тикетов
+
+/mainPage/allTicketsByName - поиск по имени тикета.Показать кратко и тикетах с проекта
+id - айди проекта, текущего.
+name - имя для поиска, не пустое
+summary - true или false, обозначает искать по описаниию тикета или нет
+Ответ
+json с краткой инфой о тикетах
+false - если нет тикетов
+
+
+/project/allProjects  получить все проекты, не приватные
+Ответ
+json с проектами
+false если нет проектов
+
+
+/project/project получить проект по айди
+id проекта
+Ответ
+json с проектом
+false если нет проекта по айди
+
+/ticket/ticket - получить тикет (без приор, статс, северети и комментов)
+id - айди тикета  
+Ответ
+json с  инфой
+false - если нет тика по айди
+
+/ticket/comments - комменты для тикета
+id - айди тикета
+Ответ
+json с комментами
+false - если нет комментов
+
+/ticket/autor - автор тикета
+id - айди тикета
+Ответ
+json с автором
+false - если нет автора
+
+
+/ticket/fixer - фиксеры тикета
+id - айди тикета
+Ответ
+json с именами фиксеров 
+false - если нет фиксеров
+
+
+/ticket/userList - список имен юзеров с этого проекта 
+id - айди проекта
+Ответ
+json с именами юзеров
+false - если нет юзеров
+
+/ticket/comments/add - добавить комент 
+ticketId - айди тикета
+comment  не пустой 
+Ответ
+ json с коментом, который был добавлен с привязкой к дате
+false - если что то не так
+
+/ticket/status - список статусов для тикета
+Ответ
+json
+
+/ticket/prority - список prority  для тикета
+Ответ
+json
+
+/ticket/severity - список severity  для тикета
+Ответ
+json
+
+/ticket/update - обновить тикет
+id - айди тикета не пустое
+name не пустое
+summary не пустое
+steptsToReproduce может быть пустое
+expectedResult  может быть пустое
+actualResult   может быть пустое
+status  не пустое, значение только с списка /ticket/status
+priority  не пустое, значение только с списка /ticket/prority
+severity  не пустое, значение только с списка /ticket/severity
+fixers - не пустое, json надо передать в виде
+["name1","name2"].Сделать это можно так:
+JSON.stringify(fix_names), где fix_names = {имена фиксеров}.
+Ответ 
+true если оновили
+false если что не так
+
+
+/ticket/create - создать тикет
+id - айди ПРОЕКТА, в котором создаешь тикет
+name не пустое
+summary не пустое
+steptsToReproduce может быть пустое
+expectedResult  может быть пустое
+actualResult   может быть пустое
+status  не пустое, значение только с списка /ticket/status
+priority  не пустое, значение только с списка /ticket/prority
+severity  не пустое, значение только с списка /ticket/severity
+fixers - не пустое, json надо передать в виде
+["name1","name2"].Сделать это можно так:
+JSON.stringify(fix_names), где fix_names = {имена фиксеров}.
+Ответ 
+id нового тикета, который был создан
+false если что не так
+
+
+/ticket/history - история тикета, доступна после логина
+ticketId - айди тикета
+Ответ
+json
+false если что не так
+
+
+/ticket/canUpdateTicket -  может изменят юзер тикеты в проекте или нет
+id - айди проекта
+Ответ
+true
+false 
+
+
+/ticket/canCreateTicket может юзер создавать тикеты в проекте или нет
+id - айди проекта
+Ответ
+true
+false 
+
+
+/project/checkName  - проверить имя проекта
+Ответ
+true
+false
+
+
+/project/create - создать проект
+name - имя проекта (уникальное)
+members - джесон с мемеьрами (как при создании и апдейти тикета)
+type - приватный или нет true false
+Ответ 
+true 
+false
+

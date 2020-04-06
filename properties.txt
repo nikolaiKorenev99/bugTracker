@@ -1,0 +1,8 @@
+port:13722
+database:tss5.db
+emailUsername:
+emailPassword:
+emailSubject:BugTracker support
+emailTextRegistration:Please, to confirm your email address enter this code:
+emailRestoreText:Your password is: 
+Message from t5.sumdu-tss.site
